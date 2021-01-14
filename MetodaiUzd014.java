@@ -8,22 +8,19 @@ package UzdaviniaiMetodai2;
 import java.util.Scanner;
 public class MetodaiUzd014 {
     public static void main(String[] args) {
-
         Scanner reader = new Scanner(System.in);
 
         System.out.print("Iveskite intervalo pradžios skaičių: ");
-
         int startNo = reader.nextInt();
 
         System.out.print("Iveskite intervalo pabaigos skaičių: ");
-
         int endNo = reader.nextInt();
 
         while (startNo <= endNo) {
-
             System.out.print(getReverse(startNo) + " ");
             startNo++;
         }
+
         reader.close();
     }
 

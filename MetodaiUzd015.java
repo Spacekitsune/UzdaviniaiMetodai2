@@ -12,19 +12,16 @@ public class MetodaiUzd015 {
         Scanner reader = new Scanner(System.in);
 
         int n = 6;
-
         int counter = 0;
-
         int num;
 
         while (true) {
             System.out.print("Iveskite skaičių: ");
-
             num = reader.nextInt();
+
             if (num==0) {
                 break;
             }
-
             if (n==getSum(num)) {
                 counter++;
             }
@@ -43,5 +40,4 @@ public class MetodaiUzd015 {
         }
         return sum;
     }
-
 }

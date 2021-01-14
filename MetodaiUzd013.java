@@ -9,21 +9,17 @@ import java.util.Scanner;
 
 public class MetodaiUzd013 {
     public static void main(String[] args) {
-
         Scanner reader = new Scanner(System.in);
 
         System.out.print("Iveskite intervalo pradžios skaičių: ");
-
         int startNo = reader.nextInt();
 
         System.out.print("Iveskite intervalo pabaigos skaičių: ");
-
         int endNo = reader.nextInt();
 
         int bendraSuma = 0;
 
         while (startNo <= endNo) {
-
             bendraSuma = bendraSuma + getSum(startNo);
             startNo++;
         }

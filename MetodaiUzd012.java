@@ -10,15 +10,12 @@ package UzdaviniaiMetodai2;
 import java.util.Scanner;
 public class MetodaiUzd012 {
     public static void main(String[] args) {
-
         Scanner reader = new Scanner(System.in);
 
         System.out.print("Iveskite intervalo pradžios skaičių: ");
-
         int startNo = reader.nextInt();
 
         System.out.print("Iveskite intervalo pabaigos skaičių: ");
-
         int endNo = reader.nextInt();
 
         int counter = 0;
@@ -26,12 +23,11 @@ public class MetodaiUzd012 {
         while (startNo <= endNo) {
 
             if (startNo % getSum(startNo) == 0) {
-
                 counter++;
             }
-
             startNo++;
         }
+
         System.out.println("Intervale yra " + counter
                 + " skaičiai, kurie dalijasi iš juos sudarančių skaitmenų sumos.");
 

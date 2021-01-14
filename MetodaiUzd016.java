@@ -11,13 +11,10 @@ package UzdaviniaiMetodai2;
 import java.util.Scanner;
 public class MetodaiUzd016 {
     public static void main(String[] args) {
-
         Scanner reader = new Scanner(System.in);
 
         int m = 2;
-
         int counter = 0;
-
         int num;
 
         while (true) {
@@ -27,12 +24,13 @@ public class MetodaiUzd016 {
             if (num==0) {
                 break;
             }
-
             if (m==getDigit(num)) {
                 counter++;
             }
         }
+
         System.out.println(counter + " kartų");
+
         reader.close();
     }
 
