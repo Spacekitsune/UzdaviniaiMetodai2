@@ -16,49 +16,70 @@ package UzdaviniaiMetodai2;
 import java.util.Scanner;
 public class MetodaiUzd019 {
     public static void main(String[] args) {
-
         Scanner reader = new Scanner(System.in);
 
-        double k1, k2, k3;
-        System.out.println("Storapadė ar plonapadė pica?");
-        String input1 = reader.toString();
-
-        if (input1.equals("storapadė")) {
-            k1=2;
-        } else {
-            k1 = 1.5;
+        System.out.print("Pasirinkite picos tipą: storapadė ar plonapadė.");
+        String picosPadas = reader.nextLine();
+        System.out.print("Pasirinkite picos dydį: 20, 30 ar 50 cm.");
+        int pisosDydis = Integer.parseInt(reader.nextLine());
+        System.out.print("Pasirinkite ingredientų kiekį.");
+        int kiekis = Integer.parseInt(reader.nextLine());
+        System.out.println("Išsirinkite ingredientus: sūris, kumpis, dešra, pomidorai, pievagrybiai, alyvuogės, marinuoti agurkėliai.");
+        System.out.println("Įveskite ingredientus vienoje eilutėje.");
+        String top;
+        String allTop = "";
+        int counter=0;
+        while (true) {
+            top = reader.nextLine();
+            allTop = allTop + top;
+            counter++;
+            if (counter==kiekis) {
+                break;
+            }
         }
 
-        System.out.println("Pasirinkite picos dydį: 20cm, 30 cm ar 50cm");
-        String input2 = reader.toString();
+        System.out.println("Užsakyta pica:");
+        System.out.printf("%s , %d cm, ingredientai: %s .", picosPadas, pisosDydis, allTop);
+        System.out.println();
 
-        if (input2.equals("20")) {
-            k2 = 0.5;
-        } else if (input2.equals("30")) {
-            k2 = 1;
-        } else {
-            k2 = 2;
-        }
+        double bendraSuma=printPizzaPrice(picosPadas,pisosDydis,kiekis);
 
-        System.out.println("Ingredientai:");
-        System.out.println("1. Sūris.");
-        System.out.println("2. Kumpis.");
-        System.out.println("3. Dešra.");
-        System.out.println("4. Pomidorai.");
-        System.out.println("5. Pievagrybiai.");
-        System.out.println("6. Alyvuogės.");
-        System.out.println("7. Marinuoti agurkėliai");
-        System.out.println("Kiek reikia ingredientų?");
-        int n = reader.nextInt();
-        k3=n*0.5;
-        System.out.print("Iveskite ingredientus vienoje eilutėje");
-        String ing = reader.toString();
+        System.out.printf("Kaina %.2f eur.", bendraSuma);
+
         reader.close();
     }
-    private static void string (String input1, String input2, String ing) {
-        System.out.println("Užsakyta pica:");
-        System.out.println(input1 + ","+ input2+ ", ingredientai: "+ing);
+    private static double printPizzaPrice (String picosPadas, int picosDydis, int kiekis) {
+        double kaina1=0;
+        double kaina2=0;
+        double kaina3=0;
+        double suma;
 
+        switch (picosPadas) {
+            case "storapadė" :
+                kaina1= 2;
+                break;
+            case "plonapadė" :
+                kaina1= 1.5;
+                break;
+        }
+
+        switch (picosDydis) {
+            case 20 :
+                kaina2= 0.5;
+                break;
+            case 30 :
+                kaina2= 1;
+                break;
+            case 50 :
+                kaina2= 2;
+                break;
+        }
+
+        for (int i=1; i<= kiekis; i++) {
+            kaina3=kaina3+0.5;
+        }
+
+        suma=kaina1+kaina2+kaina3;
+        return suma;
     }
-
 }
