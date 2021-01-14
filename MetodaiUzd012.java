@@ -36,7 +36,7 @@ public class MetodaiUzd012 {
 
     private static int getSum(int a) { //apskaičiuojama skaičiaus skaitmenų suma.
 
-        int sum = 0;
+        int sum=0 ;
 
         while (a > 0) {
             sum = sum + a % 10;

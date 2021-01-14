@@ -22,7 +22,7 @@ public class MetodaiUzd017 {
         int counter =0;
 
         while (a<=b) {
-            if (getDivisors(a) <= k) {
+            if (getDivisors(a) == k) {
                 counter++;
             }
             a++;
@@ -33,7 +33,7 @@ public class MetodaiUzd017 {
         reader.close();
     }
 
-    private static int getDivisors(int n) {
+    private static int getDivisors(int n) { // apskaičiuoja kiek sveikasis skaičius turi daliklių.
         int divisor = 0;
         for (int i = 1; i <= n; i++) {
             if (n % i == 0)
