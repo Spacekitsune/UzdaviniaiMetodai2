@@ -28,11 +28,9 @@ package UzdaviniaiMetodai2;
 import java.util.Scanner;
 public class MetodaiUzd020 {
     public static void main(String[] args) {
-
         Scanner reader = new Scanner(System.in);
 
         char input;
-
         int counterM = 0;
         int counterP = 0;
         int counterS = 0;
@@ -40,11 +38,11 @@ public class MetodaiUzd020 {
         while (true) {
             System.out.print("Iveskite taros rūšį: ");
             input = reader.next(".").charAt(0);
-            if (input == '0') {
+        if (input == '0') {
                 break;
-            }
+        }
 
-            if (input == 'm') {
+        if (input == 'm') {
                 counterM++;
             } else if (input == 'p') {
                 counterP++;
@@ -53,37 +51,36 @@ public class MetodaiUzd020 {
             } else {
                 System.out.println("Klaida");
             }
-
         }
-        printInfo(counterS, counterM, counterP);
-        printTotal(counterS, counterM, counterP);
-        printMax(counterS, counterM, counterP);
+
+            printInfo(counterS, counterM, counterP);
+            printTotal(counterS, counterM, counterP);
+            printMax(counterS, counterM, counterP);
 
         reader.close();
     }
 
     private static void printInfo(int counterS, int counterM, int counterP) {
-        System.out.println("Stiklinių: " + counterS);
         System.out.println("Metalinių: " + counterM);
+        System.out.println("Stiklinių: " + counterS);
         System.out.println("Plastikinių: " + counterP);
     }
 
     private static void printTotal(int counterS, int counterM, int counterP) {
 
         double n = (counterS + counterM + counterP) * 0.1;
-        System.out.println("Gauta suma: "+n);
+        System.out.printf("Grąžinamas užstatas: %.2f Eur",n);
+        System.out.println();
     }
 
     private static void printMax(int counterS, int counterM, int counterP) {
         int max = Math.max(counterM, (Math.max(counterS, counterP)));
         if (max == counterM) {
-            System.out.println("Daugiausia metalinių");
+            System.out.println("Metalinių pakuočių priimta daugiausiai.");
         } else if (max == counterS) {
-            System.out.println("Daugiausia stiklinių");
+            System.out.println("Stiklinių pakuočių priimta daugiausiai.");
         } else {
-            System.out.println("Daugiausia plastikinių");
+            System.out.println("Plastikinių pakuočių priimta daugiausiai.");
         }
-
     }
-
 }
